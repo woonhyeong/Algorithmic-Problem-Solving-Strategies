@@ -25,8 +25,8 @@ int countPair(bool taken[10]) {
 
 	if (firstFree == -1) return 1;
 
-	for (int k = firstFree+ 1; k < st_num; k++ ) {
-		if (!taken[k]&&areFriend[firstFree][k]) {
+	for (int k = firstFree + 1; k < st_num; k++) {
+		if (!taken[k] && areFriend[firstFree][k]) {
 			taken[firstFree] = taken[k] = true;
 			count += countPair(taken);
 			taken[firstFree] = taken[k] = false;
@@ -56,7 +56,7 @@ int main() {
 		for (int k = 0; k < pair_num; k++) {
 			int student1, student2;
 			cin >> student1 >> student2;
-			
+
 			if (student1 == student2 || student1 <0 || student2 <0 || student1 > st_num || student2 > st_num) exit(-1);
 
 			areFriend[student1][student2] = true;
